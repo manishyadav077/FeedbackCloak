@@ -12,7 +12,9 @@ async function dbConnect(): Promise<void> {
     return;
   }
   try {
-    const db = await mongoose.connect(process.env.MONGODB_URL || "", {});
+    const db = await mongoose.connect(
+      "mongodb+srv://manishjadhav433:feedbackcloak00@feedback-cloak.m1ivk.mongodb.net/?retryWrites=true&w=majority&appName=Feedback-Cloak"
+    );
     connection.isConnected = db.connections[0].readyState;
 
     console.log("DB Connected Successfully");
